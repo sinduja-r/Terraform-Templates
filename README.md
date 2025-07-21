@@ -1,6 +1,6 @@
 # Terraform-Templates
 
-# 🛠️ IaC Misconfiguration Dataset for Static Analysis
+## 🛠️ IaC Misconfiguration Dataset for Static Analysis
 
 This repository contains intentionally misconfigured **Terraform** files to test and validate rule-based and static analysis tools (e.g., Checkov, custom scanners, Cloudsplaining) for identifying security issues before deployment.
 
