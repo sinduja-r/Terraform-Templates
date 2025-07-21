@@ -4,11 +4,11 @@ import re
 # Define rules for detecting misconfigurations
 RULES = {
     "Public S3 Bucket": re.compile(r'acl\s*=\s*"(public-read|public-read-write)"', re.IGNORECASE),
-    "Over-Permissive IAM Policy": re.compile(r'"Action"\s*:\s*\[\s*"\*"', re.IGNORECASE),
-    "Open Security Group": re.compile(r'cidr_blocks\s*=\s*\[\s*"0\.0\.0\.0/0"\s*\]', re.IGNORECASE),
+    "Open Security Group (Ingress Only)": re.compile(r'ingress\s*{[^}]*?cidr_blocks\s*=\s*\[\s*"0\.0\.0\.0/0"\s*\]',re.IGNORECASE | re.DOTALL),
     "Unencrypted Storage": re.compile(r'resource\s+"aws_ebs_volume".*?[^_]encrypted\s*=\s*false', re.DOTALL | re.IGNORECASE),
-    "Unsecured API Gateway": re.compile(r'resource\s+"aws_api_gateway_method".*?authorization\s*=\s*"NONE"', re.DOTALL | re.IGNORECASE),
     "Disabled CloudTrail": re.compile(r'enable_logging\s*=\s*false', re.IGNORECASE),
+    "Over-Permissive IAM Policy": re.compile(r'policy\s*=\s*jsonencode\(\s*{[^}]*?Action\s*=\s*"\*"', re.DOTALL | re.IGNORECASE),
+    "Unsecured Endpoint (HTTP)": re.compile(r'http://[^\s"]+', re.IGNORECASE)
 }
 
 def scan_file(file_path):
