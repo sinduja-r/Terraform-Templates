@@ -35,7 +35,7 @@ def scan_directory(root_dir):
     return report
 
 if __name__ == "__main__":
-    folder_to_scan = "iac-misconfig-dataset"  # Change if needed
+    folder_to_scan = "iac-misconfig-dataset"  
     results = scan_directory(folder_to_scan)
 
     if not results:
@@ -43,7 +43,7 @@ if __name__ == "__main__":
     else:
         print("Misconfigurations Detected:\n")
         for file_path, issues in results.items():
-            print(f"📄 {file_path}")
+            print(f"{file_path}")
             for issue in issues:
-                print(f"   └─ {issue}")
+                print(f"  └─ {issue}")
             print()
