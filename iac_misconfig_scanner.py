@@ -1,5 +1,6 @@
 import os
 import re
+import sys
 
 # Define rules for detecting misconfigurations
 RULES = {
