@@ -40,6 +40,7 @@ if __name__ == "__main__":
 
     if not results:
         print("No misconfigurations found.")
+        sys.exit(0) #Build Sucesss
     else:
         print("Misconfigurations Detected:\n")
         for file_path, issues in results.items():
@@ -47,3 +48,4 @@ if __name__ == "__main__":
             for issue in issues:
                 print(f"  └─ {issue}")
             print()
+         sys.exit(1) #Build Failed
