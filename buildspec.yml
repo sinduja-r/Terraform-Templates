@@ -1,0 +1,10 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+  build:
+    commands:
+      - echo "Running misconfig analyzer on IaC templates..."
+      - python iac_misconfig_scanner.py
