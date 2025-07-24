@@ -49,4 +49,4 @@ if __name__ == "__main__":
             for issue in issues:
                 print(f"  └─ {issue}")
             print()
-         sys.exit(1) #Build Failed
+        sys.exit(1) #Build Failed
