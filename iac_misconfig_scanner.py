@@ -36,7 +36,7 @@ def scan_directory(root_dir):
     return report
 
 if __name__ == "__main__":
-    folder_to_scan = "iac-misconfig-dataset"  
+    folder_to_scan = "iac-misconfig-template-dataset"  
     results = scan_directory(folder_to_scan)
 
     if not results:
