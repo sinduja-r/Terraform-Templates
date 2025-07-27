@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/YOUR-USERNAME/iac-analyzer.git'
+                git 'https://github.com/sinduja-r/Terraform-Templates.git'
             }
         }
 
@@ -27,7 +27,7 @@ pipeline {
             steps {
                 sh '''
                     source ${VENV_DIR}/bin/activate
-                    python3 analyzer.py
+                    python3 iac_misconfig_scanner.py
                 '''
             }
         }
